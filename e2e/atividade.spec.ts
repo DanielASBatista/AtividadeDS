@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-const MEU_RM   = 'COLOQUE AQUI SEU RM'
+const MEU_RM   = '251376'
 const BASE_URL = 'https://prova.carvalho.cc';
 
 test('submissão completa da prova', async ({ browser }) => {
@@ -28,17 +28,69 @@ await page.getByLabel("URL do Repositório").click();
 
 await page.fill("#repo-url", "https://github.com/DanielASBatista/AtividadeDS")
 
-const menuLogin = page.getByRole('button', { name: 'Iniciar Prova' })
+await page.getByRole('button', { name: 'Iniciar Prova' }).click();
 
-await page.click("#button");
+await page.getByRole('radio', { name: 'Don\'t Repeat Yourself — evite' }).click();
 
+await page.getByRole('button', { name: 'Próxima' }).click();
 
+await page.getByRole('radio', { name: 'Testa um único'}).click();
 
+await page.getByRole('button', { name: 'Próxima' }).click();
 
+await page.getByRole('radio', { name: 'Testes unitários'}).click();
 
-  
+await page.getByRole('button', { name: 'Próxima' }).click();
 
-  // Confirmar envio
-  // Remover o comentário quando terminar de escrever o código
-  // await expect(page.getByRole('heading', { name: 'Prova enviada!' })).toBeVisible();
+await page.getByRole('radio', { name: 'A porcentagem'}).click();
+
+await page.getByRole('button', { name: 'Próxima' }).click();
+
+await page.getByRole('radio', { name: 'Quantas vezes'}).click();
+
+await page.getByRole('button', { name: 'Próxima' }).click();
+
+await page.getByRole('radio', { name: 'Teste de integração'}).click();
+
+await page.getByRole('button', { name: 'Próxima' }).click();
+
+await page.getByRole('radio', { name: 'Executa uma fun'}).click();
+
+await page.getByRole('button', { name: 'Próxima' }).click();
+
+await page.getByRole('radio', { name: 'Uma t'}).click();
+
+await page.getByRole('button', { name: 'Próxima' }).click();
+
+await page.getByRole('radio', { name: 'Uma função q'}).click();
+
+await page.getByRole('button', { name: 'Próxima' }).click();
+
+await page.getByRole('radio', { name: 'Executar'}).click();
+
+await page.getByRole('button', { name: 'Próxima' }).click();
+
+await page.getByRole('radio', { name: 'Para manter o teste'}).click();
+
+await page.getByRole('button', { name: 'Próxima' }).click();
+
+await page.getByRole('radio', { name: 'Porque são os mais caros'}).click();
+
+await page.getByRole('button', { name: 'Próxima' }).click();
+
+await page.getByRole('radio', { name: 'Incluir na lista'}).click();
+
+await page.getByRole('button', { name: 'Próxima' }).click();
+
+await page.getByRole('radio', { name: 'Os serviços podem'}).click();
+
+await page.getByRole('button', { name: 'Próxima' }).click();
+
+await page.getByRole('radio', { name: 'Um conjunto de'}).click();
+
+await page.getByRole('button', { name: 'Próxima' }).click();
+
+await page.getByRole('radio', { name: 'Os testes devem ser simples'}).click();
+
+await page.getByRole('button', {name: 'Enviar'}).click();
 });
